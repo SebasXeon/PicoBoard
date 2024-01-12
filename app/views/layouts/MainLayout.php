@@ -6,5 +6,6 @@
     <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 <body>
+    <?= $content ?>
 </body>
 </html>
