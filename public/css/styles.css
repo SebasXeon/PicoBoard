@@ -1,0 +1,11 @@
+@import url('themes/pico.css');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: var(--main-font-family);
+    background-color: var(--main-bg-color);
+}
