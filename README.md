@@ -14,7 +14,7 @@ PicoBoard is a small imageboard that aims to be lightweight yet fully functional
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/PicoBoard.git
+    git clone https://github.com/SebasXeon/PicoBoard.git
     ```
 
 
