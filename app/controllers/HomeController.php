@@ -1,4 +1,6 @@
 <?php
+include_once('./app/models/BoardModel.php');
+
 class HomeController {
     // Constructor
     public function __construct() {
@@ -7,7 +9,8 @@ class HomeController {
     // Index action
     public function index() {
         $page['title'] = 'PicoBoard';
-
-        include_once('app/views/layouts/MainLayout.php');
+        $page['boards'] = Board::getAll();
+        
+        require_once('./app/views/home.php');
     }
 }

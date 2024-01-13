@@ -1,8 +1,8 @@
 <?php
 
 // Controllers
-include_once('app/controllers/HomeController.php');
-include_once('app/controllers/ExceptionController.php');
+include_once('./app/controllers/HomeController.php');
+include_once('./app/controllers/ExceptionController.php');
 
 // URL parsing
 $request_uri = $_SERVER['REQUEST_URI'];

@@ -1,10 +1,10 @@
 :root {
     --main-bg-color: #e8fcc2;
     --main-text-color: #120309;
-    --sub-text-color: #adadad;
-    --main-link-color: #46b1c9;
+    --sub-text-color: #ffffff;
     --main-border-color: #b1cc74;
-    --main-post-bg-color: #b8d181;
+    --main-box-bg-color: #b8d181;
+    --main-post-header-color: #9799ca;
 
     --main-font-family: 'Roboto', sans-serif;
 }  
