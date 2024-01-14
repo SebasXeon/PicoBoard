@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Source+Code+Pro&display=swap');
+
+:root {
+    --main-bg-color: #ffffff;
+    --main-text-color: #000000;
+    --sub-text-color: #5b5b5b;
+    --main-border-color: #1c1c1c;
+    --main-post-header-color: #ffffff;
+
+    --main-font-family: 'Source Code Pro', monospace;
+    --second-font-family: 'Pixelify Sans', sans-serif
+}

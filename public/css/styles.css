@@ -1,4 +1,4 @@
-@import url('themes/pico.css');
+@import url('themes/picoboard.css');
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +9,9 @@ body {
     font-family: var(--main-font-family);
     background-color: var(--main-bg-color);
 }
+h1, h2, h3, h4, h5, h6, a {
+    font-family: var(--second-font-family);
+}
 main {
     width: 100%;
     min-height: 100vh;
@@ -16,6 +19,45 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 1rem;
+}
+
+/* Common */
+.b-full {
+    border: 1px solid var(--main-border-color);
+}
+.b-left {
+    border-left: 1px solid var(--main-border-color);
+}
+.b-right {
+    border-right: 1px solid var(--main-border-color);
+}
+.b-top {
+    border-top: 1px solid var(--main-border-color);
+}
+.b-bottom {
+    border-bottom: 1px solid var(--main-border-color);
+}
+.padded{
+    padding: .5rem 1rem;
+}
+.inverse {
+    background-color: var(--main-text-color);
+    color: var(--main-bg-color);
+}
+.normal {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+.button {
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--main-text-color);
+    color: var(--main-bg-color);
+    border: none;
+    outline: none;
+    border-radius: 0;
 }
 
 /* Home Page */
@@ -23,46 +65,32 @@ main {
     width : 100%;
     max-width: 720px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 1rem;
 }
-.h-container .h-logo {
-    width: 512px;
+.h-top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
-.h-content{
-    width: 100%;
-    background: var(--main-box-bg-color);
-    border: 1px solid var(--main-border-color);
+.h-top > .h-top-section-left{
+    grid-column: 1 / 4;
 }
-.h-section-header{
-    padding: .2rem .5rem;
-    background: var(--main-post-header-color);
-    border: 1px solid var(--main-border-color);
-}
-.h-section-content{
-    padding: .2rem .5rem;
+.h-row-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: .5rem;
+    gap: 1px;
 }
-.h-section-item{
+.h-row-item{
     display: flex;
     flex-direction: column;
 }
-.h-section-i-desc{
-    font-size: .8rem;
+.h-row-item > a {
+    font-size: 1.2rem;
 }
 
-/* Error Page */
-.big-message{
+/* Board Page */
+.b-top{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    height: 100vh;
-}
-.big-message h1{
-    font-size: 5rem;
+    align-items: center;
+    gap: 1.5rem;
 }

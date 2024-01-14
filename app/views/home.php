@@ -1,32 +1,38 @@
 <?php 
     $layout = 'app/views/layouts/MainLayout.php';
     require_once('app/core/layout.php');
-
     $boards = $page['boards'];
 ?>
 
-<div class="h-container">
-    <div class="h-banner">
-        <img src="/images/logo.png" alt="PICO-BOARD" class="h-logo" />
-    </div>
-    <div class="h-content">
-        <div class="h-section">
-            <div class="h-section-header">
-                <h2>Boards</h2>
+<div class="h-container b-full">
+    <div class="h-top b-bottom">
+        <div class="h-top-section  h-top-section-left">
+            <div class="h-top-title b-bottom padded">
+                <h1>PicoBoard</h1>
             </div>
-            <div class="h-section-content">
-                <?php foreach ($boards as $board) { ?>
-                    <div class="h-section-item">
-                        <a href="/<?php echo $board->url; ?>/" class="h-section-i-link"><?php echo $board->title; ?></a>
-                        <span class="h-section-i-desc"> <?php echo $board->description; ?> </span>
-                    </div>
-                <?php } ?>
+            <div class="h-top-desc padded">
+                <p>Simple, fast, and easy to use imageboard.</p>
             </div>
         </div>
+        <div class="h-top-section b-left padded inverse">
+            pico
+        </div>
     </div>
-    <div class="h-footer">
-        <div class="h-footer-content">
-            <span class="h-footer-item">PicoBoard</span>
-            <span class="h-footer-item">Created by <a href="https://github.com/SebasXeon" target="_blank">SebasXeon</a></span>
+    <div class="h-body">
+        <div class="h-b-row">
+            <div class="h-row-title padded b-bottom">
+                <h2>Boards</h2>
+            </div>
+            <div class="h-row-content">
+                <div class="h-row-list inverse">
+                    <?php foreach($boards as $board): ?>
+                        <div class="h-row-item padded normal">
+                            <a href="<?= $board->url ?>/"><?= $board->title ?></a>
+                            <span><?= $board->description ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
