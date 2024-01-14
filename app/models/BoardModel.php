@@ -38,4 +38,22 @@ class Board {
 
         return $list;
     }
+    
+    public static function getByUrl($url) {
+        // Initialize the database connection
+        $DB = new Database();
+        // Get all boards
+        $DB->query('SELECT * FROM Boards WHERE url = :url');
+        $DB->bind(':url', $url);
+        $board = $DB->fetch();
+
+        // Close the database connection
+        $DB->closeConnection();
+
+        if ($board == null) {
+            return null;
+        }
+
+        return new Board($board['id'], $board['title'], $board['description'], $board['url'], $board['created_at'], $board['updated_at']);
+    }
 }
