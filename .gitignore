@@ -1,2 +1,2 @@
 /public/setup.php
-pico.sqlite
+*.sqlite
