@@ -2,7 +2,7 @@
 // BoardModel class
 
 class Board {
-    private $db;
+    private $DB;
 
     public $id;
     public $title;
@@ -56,4 +56,6 @@ class Board {
 
         return new Board($board['id'], $board['title'], $board['description'], $board['url'], $board['created_at'], $board['updated_at']);
     }
+
+
 }
