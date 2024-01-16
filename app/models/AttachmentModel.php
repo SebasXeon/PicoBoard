@@ -12,7 +12,12 @@ class Attachment {
     public $created_at;
     public $updated_at;
 
-    public function __construct($id, $filename, $original_filename, $mime_type, $file_size, $created_at, $updated_at) {
+    public function __construct($DB) {
+        $this->DB = $DB;        
+    }
+
+    // Set the attachment data
+    public function set($id, $filename, $original_filename, $mime_type, $file_size, $created_at, $updated_at) {
         $this->id = $id;
         $this->filename = $filename;
         $this->original_filename = $original_filename;

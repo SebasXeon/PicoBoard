@@ -24,33 +24,33 @@
                     <h3>{&nbsp;&nbsp;&nbsp;<?= $thread->title; ?>&nbsp;&nbsp;&nbsp;}</h3>
                 </div>
                 <div class="thread-id">
-                    <span class="thread-id-text">#<?= $thread->posts[0]->id ?> </span>
+                    <span class="thread-id-text">#<?= $thread->id ?> </span>
                 </div>
             </div>
             <div class="thread-content padded">
-                <?php if ($thread->posts[0]->attachment_id != null) { ?>
+                <?php if ($thread->attachment_id != null) { ?>
                     <div class="thread-content-image">
                         <img src="https://via.placeholder.com/150" alt="Thread image">
                         <span class="thread-content-image-text">Image description</span>
                     </div>
                 <?php } ?>
                 <div class="thread-content-body">
-                    <span class="thread-content-title">Anonymous#1232 - 14/01/2024 10:23 - #<?= $thread->posts[0]->id ?> [<a href="#">Reply</a>]</span>
-                    <p class="thread-content-text"><?= $thread->posts[0]->body; ?></p>
+                    <span class="thread-content-title">Anonymous#1232 - <?= $thread->created_at ?> - #<?= $thread->id ?> [<a href="thread/<?= $thread->id ?>">Reply</a>]</span>
+                    <p class="thread-content-text"><?= $thread->body; ?></p>
                 </div>
             </div>
             <div class="thread-replies padded">
-                <?php foreach(array_slice($thread->posts,1) as $post) { ?>
+                <?php foreach($thread->replies as $reply) { ?>
                     <div class="thread-content padded b-top">
-                        <?php if ($post->attachment_id != null) { ?>
+                        <?php if ($reply->attachment_id != null) { ?>
                             <div class="thread-content-image">
                                 <img src="https://via.placeholder.com/150" alt="Thread image">
                                 <span class="thread-content-image-text">Image description</span>
                             </div>
                         <?php } ?>
                         <div class="thread-content-body">
-                            <span class="thread-content-title">Anonymous#1232 - 14/01/2024 10:23 - #<?= $post->id ?> [<a href="#">Reply</a>]</span>
-                            <p class="thread-content-text"><?= $post->body; ?></p>
+                            <span class="thread-content-title">Anonymous#1232 - <?= $reply->created_at ?> - #<?= $reply->id ?> [<a href="thread/<?= $thread->id ?>">Reply</a>]</span>
+                            <p class="thread-content-text"><?= $reply->body; ?></p>
                         </div>
                     </div>
                 <?php } ?>

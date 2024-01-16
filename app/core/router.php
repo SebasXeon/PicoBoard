@@ -4,6 +4,7 @@
 include_once('./app/controllers/HomeController.php');
 include_once('./app/controllers/BoardController.php');
 include_once('./app/controllers/ExceptionController.php');
+include_once('./app/controllers/ThreadController.php');
 
 // Routes
 include_once('./app/routes/web.php');
@@ -28,16 +29,12 @@ foreach ($routes as $route => $controllerAction) {
     if (preg_match($pattern, $uri, $matches)) {
         // Extract slugs from the URL
         $slugs = array_slice($matches, 1);
-
         // Split the controller and method
         list($controllerName, $methodName) = explode('@', $controllerAction);
-
         // Create an instance of the controller
         $controller = new $controllerName();
-
         // Call the specified method, passing slugs as arguments
         call_user_func_array([$controller, $methodName], $slugs);
-
         $matched = true;
         break;
     }

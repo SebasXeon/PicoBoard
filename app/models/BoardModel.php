@@ -11,7 +11,12 @@ class Board {
     public $created_at;
     public $updated_at;
 
-    public function __construct($id, $title, $description, $url, $created_at, $updated_at) {
+    public function __construct($db) {
+        $this->DB = $db;
+    }
+
+    // Set the board data
+    public function set($id, $title, $description, $url, $created_at, $updated_at) {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
@@ -30,7 +35,9 @@ class Board {
         // List of boards
         $list = [];
         foreach ($boards as $board) {
-            $list[] = new Board($board['id'], $board['title'], $board['description'], $board['url'], $board['created_at'], $board['updated_at']);
+            $new_board = new Board($DB);
+            $new_board->set($board['id'], $board['title'], $board['description'], $board['url'], $board['created_at'], $board['updated_at']);
+            $list[] = $new_board;
         }
 
         // Close the database connection
@@ -54,7 +61,10 @@ class Board {
             return null;
         }
 
-        return new Board($board['id'], $board['title'], $board['description'], $board['url'], $board['created_at'], $board['updated_at']);
+        $new_board = new Board($DB);
+        $new_board->set($board['id'], $board['title'], $board['description'], $board['url'], $board['created_at'], $board['updated_at']);
+
+        return $new_board;
     }
 
 
