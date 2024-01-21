@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Core\Render;
 use App\Models\Board;
 use App\Models\Post;
 
@@ -24,6 +25,6 @@ class ThreadController {
         // Get replies from the thread
         $page['thread']->replies = Post::getReplies($page['thread']->id);
 
-        require_once('./app/views/thread.php');
+        Render::view('./App/Views/Thread.php', ['page' => $page]);
     }
 }

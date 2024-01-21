@@ -1,9 +1,6 @@
 <?php 
-    $layout = 'App/Views/Layouts/MainLayout.php';
-    require_once('App/Core/Layout.php');
     $boards = $page['boards'];
 ?>
-
 <div class="h-container b-full">
     <div class="h-top b-bottom">
         <div class="h-top-section  h-top-section-left">

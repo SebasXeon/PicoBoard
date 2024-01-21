@@ -1,6 +1,7 @@
 <?php
-
 namespace App\Controllers;
+
+use App\Core\Render;
 
 use App\Models\Board;
 
@@ -14,6 +15,7 @@ class HomeController {
         $page['title'] = 'PicoBoard';
         $page['boards'] = Board::getAll();
         
-        require_once('./App/Views/Home.php');
+        //require_once('./App/Views/Home.php');
+        Render::view('./App/Views/Home.php', ['page' => $page]);
     }
 }

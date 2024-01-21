@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Core\Render;
+
 use App\Models\Board;
 use App\Models\Post;
 
@@ -27,6 +29,6 @@ class BoardController {
             $thread->replies = Post::getReplies($thread->id);
         }
 
-        require_once('./App/Views/Board.php');
+        Render::view('./App/Views/Board.php', ['page' => $page]);
     }
 }

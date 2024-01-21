@@ -1,4 +1,9 @@
 <?php
+
+namespace App\Controllers;
+
+use App\Core\Render;
+
 class ExceptionController {
     // Constructor
     public function __construct() {
@@ -8,6 +13,6 @@ class ExceptionController {
     public function pageNotFound() {
         $page['title'] = 'PicoBoard - 404';
 
-        require_once('app/views/404.php');
+        Render::view('./App/Views/404.php', ['page' => $page]);
     }
 }
