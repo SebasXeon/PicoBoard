@@ -1,5 +1,7 @@
 <?php
-// Attachment model
+
+namespace App\Models;
+
 
 class Attachment {
     private $DB;

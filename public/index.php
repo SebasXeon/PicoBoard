@@ -6,8 +6,11 @@ ini_set('display_errors', 1);
 // Define the base path
 chdir('../');
 
+// Include the autoloader
+require_once('App/Core/AutoLoad.php');
+
 // Include database configuration
-require_once('app/core/database.php');
+require_once('App/Core/DataBase.php');
 
 // Start the session if it's not already started
 if (session_status() == PHP_SESSION_NONE) {
@@ -15,5 +18,5 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 // Include the router
-require_once('app/core/router.php');
+require_once('App/Core/Router.php');
 //require_once('router.php');

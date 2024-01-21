@@ -1,6 +1,9 @@
 <?php
-include_once('./app/models/BoardModel.php');
-include_once('./app/models/PostModel.php');
+
+namespace App\Controllers;
+
+use App\Models\Board;
+use App\Models\Post;
 
 class BoardController {
     // Constructor
@@ -24,6 +27,6 @@ class BoardController {
             $thread->replies = Post::getReplies($thread->id);
         }
 
-        require_once('./app/views/board.php');
+        require_once('./App/Views/Board.php');
     }
 }

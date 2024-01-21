@@ -1,6 +1,10 @@
 <?php
 // BoardModel class
 
+namespace App\Models;
+
+use App\Core\Database;
+
 class Board {
     private $DB;
 

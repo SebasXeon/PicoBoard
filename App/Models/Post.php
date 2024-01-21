@@ -1,5 +1,8 @@
 <?php
-// Post model
+
+namespace App\Models;
+
+use App\Core\Database;
 
 class Post {
     private $DB;

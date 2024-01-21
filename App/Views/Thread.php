@@ -1,6 +1,6 @@
 <?php 
-    $layout = 'app/views/layouts/MainLayout.php';
-    require_once('app/core/layout.php');
+    $layout = 'App/Views/Layouts/MainLayout.php';
+    require_once('App/Core/Layout.php');
 
     $board = $page['board'];
     $thread = $page['thread'];

@@ -1,5 +1,8 @@
 <?php
-include_once('./app/models/BoardModel.php');
+
+namespace App\Controllers;
+
+use App\Models\Board;
 
 class HomeController {
     // Constructor
@@ -11,6 +14,6 @@ class HomeController {
         $page['title'] = 'PicoBoard';
         $page['boards'] = Board::getAll();
         
-        require_once('./app/views/home.php');
+        require_once('./App/Views/Home.php');
     }
 }

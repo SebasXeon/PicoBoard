@@ -1,14 +1,8 @@
 <?php
 
-// Controllers
-include_once('./app/controllers/HomeController.php');
-include_once('./app/controllers/BoardController.php');
-include_once('./app/controllers/ExceptionController.php');
-include_once('./app/controllers/ThreadController.php');
-
 // Routes
-include_once('./app/routes/web.php');
-include_once('./app/routes/api.php');
+use App\Routes\WebRoutes;
+use App\Routes\ApiRoutes;
 
 // URL parsing
 $request_uri = $_SERVER['REQUEST_URI'];
@@ -18,8 +12,13 @@ $uri = rtrim($uri, '/');
 // Routes
 $routes = [];
 
-// Merge routes
-$routes = array_merge($routes, $api_routes, $web_routes);
+// Web routes
+$webRoutes = new WebRoutes();
+$routes = array_merge($routes, $webRoutes->routes());
+
+// API routes
+$apiRoutes = new ApiRoutes();
+$routes = array_merge($routes, $apiRoutes->routes());
 
 // Check if the requested route exists
 $matched = false;
@@ -31,6 +30,8 @@ foreach ($routes as $route => $controllerAction) {
         $slugs = array_slice($matches, 1);
         // Split the controller and method
         list($controllerName, $methodName) = explode('@', $controllerAction);
+        // Prepend the namespace
+        $controllerName = 'App\\Controllers\\' . $controllerName;
         // Create an instance of the controller
         $controller = new $controllerName();
         // Call the specified method, passing slugs as arguments
