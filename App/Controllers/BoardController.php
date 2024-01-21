@@ -29,6 +29,6 @@ class BoardController {
             $thread->replies = Post::getReplies($thread->id);
         }
 
-        Render::view('./App/Views/Board.php', ['page' => $page]);
+        Render::view('Board', ['page' => $page]);
     }
 }

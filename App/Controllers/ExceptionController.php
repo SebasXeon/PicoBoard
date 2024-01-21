@@ -13,6 +13,6 @@ class ExceptionController {
     public function pageNotFound() {
         $page['title'] = 'PicoBoard - 404';
 
-        Render::view('./App/Views/404.php', ['page' => $page]);
+        Render::view('404', ['page' => $page]);
     }
 }

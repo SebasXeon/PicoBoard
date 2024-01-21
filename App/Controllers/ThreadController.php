@@ -25,6 +25,6 @@ class ThreadController {
         // Get replies from the thread
         $page['thread']->replies = Post::getReplies($page['thread']->id);
 
-        Render::view('./App/Views/Thread.php', ['page' => $page]);
+        Render::view('Thread', ['page' => $page]);
     }
 }

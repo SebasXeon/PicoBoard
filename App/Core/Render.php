@@ -11,7 +11,7 @@ class Render{
         // Start output buffering
         ob_start();
         // Include the view
-        require_once($view);
+        require_once('./App/Views/' . $view . '.php');
         // Get the content
         $content = ob_get_contents();
         // End output buffering
@@ -22,5 +22,13 @@ class Render{
         }
         // Include the layout
         require_once($layout);
+    }
+
+    // Render component
+    public static function component($component, $args) {
+        // Extract the arguments
+        extract($args);
+        // Include the component (load from App/Views/Components)
+        require('./App/Views/Components/' . $component . '.php');
     }
 }

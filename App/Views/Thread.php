@@ -1,4 +1,6 @@
 <?php 
+    use App\Core\Render;
+
     $board = $page['board'];
     $thread = $page['thread'];
 ?>
@@ -24,33 +26,11 @@
                 <span class="thread-id-text">#<?= $thread->id ?> </span>
             </div>
         </div>
-        <div class="thread-content padded">
-            <?php if ($thread->attachment_id != null) { ?>
-                <div class="thread-content-image">
-                    <img src="https://via.placeholder.com/150" alt="Thread image">
-                    <span class="thread-content-image-text">Image description</span>
-                </div>
-            <?php } ?>
-            <div class="thread-content-body">
-                <span class="thread-content-title">Anonymous#1232 - <?= $thread->created_at ?>- #<?= $thread->id ?> [<a href="#">Reply</a>]</span>
-                <p class="thread-content-text"><?= $thread->body; ?></p>
-            </div>
-        </div>
+        <?php Render::component('Post', ['board' => $board, 'thread' => $thread, 'post' => $thread]); ?>
         <div class="thread-replies padded">
-            <?php foreach($thread->replies as $reply) { ?>
-                <div class="thread-content padded b-top">
-                    <?php if ($reply->attachment_id != null) { ?>
-                        <div class="thread-content-image">
-                            <img src="https://via.placeholder.com/150" alt="Thread image">
-                            <span class="thread-content-image-text">Image description</span>
-                        </div>
-                    <?php } ?>
-                    <div class="thread-content-body">
-                        <span class="thread-content-title">Anonymous#1232 - <?= $reply->created_at ?> - #<?= $reply->id ?> [<a href="#">Reply</a>]</span>
-                        <p class="thread-content-text"><?= $reply->body; ?></p>
-                    </div>
-                </div>
-            <?php } ?>
+            <?php foreach($thread->replies as $reply) { 
+                Render::component('Post', ['board' => $board, 'thread' => $thread, 'post' => $reply]);
+            } ?>
         </div>
     </div>
 </div>

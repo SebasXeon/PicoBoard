@@ -3,7 +3,7 @@
 ?>
 <div class="h-container b-full">
     <div class="h-top b-bottom">
-        <div class="h-top-section  h-top-section-left">
+        <div class="h-top-section h-top-section-left">
             <div class="h-top-title b-bottom padded">
                 <h1>PicoBoard</h1>
             </div>
@@ -11,8 +11,8 @@
                 <p>Simple, fast, and easy to use imageboard.</p>
             </div>
         </div>
-        <div class="h-top-section b-left padded inverse">
-            pico
+        <div class="h-top-section h-top-section-right b-left padded inverse">
+            <h1 class="h-top-icon">PB</h1>  
         </div>
     </div>
     <div class="h-body">

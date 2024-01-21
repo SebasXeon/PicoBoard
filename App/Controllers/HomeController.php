@@ -16,6 +16,6 @@ class HomeController {
         $page['boards'] = Board::getAll();
         
         //require_once('./App/Views/Home.php');
-        Render::view('./App/Views/Home.php', ['page' => $page]);
+        Render::view('Home', ['page' => $page]);
     }
 }
